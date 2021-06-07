@@ -1,1 +1,78 @@
-HELLO WORLD !!!
+<html>
+<head>
+<style type="text/css">
+body {
+    background: dimgray;
+    font-size: 10px;
+    color: rgb(133, 133, 133);
+}
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+th, td {
+  padding: 5px;
+  border: 1px solid rgb(134, 134, 134);
+  height: 20px;
+  color: rgb(184, 184, 184);
+}
+th {
+  background-color: #99e2af;
+  color: rgb(49, 49, 49);
+  width: 100px;
+}
+</style>
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+
+    function calcTtl() {
+        let table = document.getElementById('t');
+
+        for (var x = 0 + 1; x < table.rows[0].cells.length; x++) {
+            var ttl = 0;
+            for (var y = 0 + 1; y < table.rows.length; y++) {
+                if (y < table.rows.length - 1) {
+                    ttl = ttl + parseFloat(table.rows[y].cells[x].innerText);
+                }
+                else {
+                    table.rows[y].cells[x].innerText = ttl;
+                }
+            }
+        }
+
+    }
+</script>
+</head>
+
+
+
+
+
+
+
+<body>
+<table id="t">
+    <tr>
+        <th></th><th>4 月</th><th>5 月</th><th>6 月</th><th>7 月</th>
+    </tr>
+    <tr>
+        <th>Cash</th><td>3</td><td>6</td><td>9</td><td>12</td>
+    </tr>
+    <tr>
+        <th>Assets</th><td>8</td><td>4</td><td>0</td><td>4</td>
+    </tr>
+    <tr>
+        <th>Total</th><td></td><td></td><td></td><td></td>
+    </tr>
+</table>
+
+<input type="button" value="Total" onclick="calcTtl();"/>
+
+</body>
+</html>
